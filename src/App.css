@@ -1,38 +1,59 @@
-.App {
-  text-align: center;
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0,
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --message-background: #f9efd3
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.message { 
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
+  padding: 1rem;
+  height: 100%;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: var(--message-background);
 }
 
-.App-link {
-  color: #61dafb;
+.message h1 {
+  font-size: 5rem;
+  text-transform: capitalize;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.message p {
+  font-size: 3rem;
 }
+
+.messages-wrapper {
+  margin: 5%;
+  padding: 4rem;
+  border: 1px solid green;
+  height: 80vh;
+  overflow: scroll;
+}
+
+.theme-selector {
+  height: 4rem;
+  display:flex;
+  border: 1px solid black;
+}
+
+.color-option {
+  border: 1px solid black;
+  width: 4rem;
+  height: 4rem;
+}
+
+.color-option-selected {
+  border: 1px solid black;
+  width: 4rem;
+  height: 4rem;
+  border: 3px solid black;
+
+}
+
+
