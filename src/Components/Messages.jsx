@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import Message from "./Message"
 import axios from "axios"
+import Themeselector from "./ThemeSelector"
+import themes from "./themes"
+
 
 export default class Messages extends Component {
     state = {
@@ -14,8 +17,11 @@ export default class Messages extends Component {
             return (<h1>No messages for today!</h1>)
         }
         return (
+            <div className = "rendered-wrapper">
+            <Themeselector colors = {themes}/>
             <div className="messages-wrapper">
                 {this.state.messages.map(m => <Message key={m.title + Date.now()} message={m}/>)}
+            </div>
             </div>
         )
     }
@@ -26,4 +32,5 @@ export default class Messages extends Component {
         if (response.error) return alert(response.error)
         this.setState({messages : response.data})
     }
+
 }

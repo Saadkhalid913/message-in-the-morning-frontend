@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import NoToken from "./Notoken"
 import Messages from "./Messages"
 import Themeselector from "./ThemeSelector"
-import themes from "./themes"
-import ThemeSelector from './ThemeSelector'
 export default class App extends Component {
     state = {
         token: undefined
@@ -18,10 +16,7 @@ export default class App extends Component {
             return (<NoToken />)
         }
         return (
-        <div className = "main-wrapper">
-            <ThemeSelector colors ={themes}/>
             <Messages token={this.state.token} />
-        </div>
         )
         
     }
