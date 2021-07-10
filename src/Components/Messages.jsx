@@ -28,7 +28,7 @@ export default class Messages extends Component {
     
     getMessages = async () => {
         const { token } = this.props
-        const response = await axios.get("http://localhost:3001/api/messages/recent", {headers: {user_auth_token: token}})
+        const response = await axios.get("http://localhost:3001/api/messages", {headers: {user_auth_token: token}})
         if (response.error) return alert(response.error)
         this.setState({messages : response.data})
     }

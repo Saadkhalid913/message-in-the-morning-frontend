@@ -15,6 +15,7 @@ export default class Themeselector extends Component {
             </div>
         )
     }
+    
     changeTheme(c) {
         for (let key in c)
             document.documentElement.style.setProperty(key, c[key])
