@@ -26,9 +26,19 @@ document.getElementById("submit-message").addEventListener("click", async () => 
     })
     const data = await response.json()
 
-    if (data.error) return console.log(data.error);
+    if (data.error) return UserMessage(data.error);
     
     document.getElementById("title-box").value = ""
     document.getElementById("body-box").value = ""
-    console.log(data)
+
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        chrome.tabs.reload(tabs[0].id);
+      });
+
+    return UserMessage("Message added")  
 })
+
+
+function UserMessage(message) {
+    document.getElementById("user-message").innerText = message
+}

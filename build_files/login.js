@@ -16,19 +16,33 @@ if (localStorage.getItem("user_auth_token")) {
 
 // Logging in logic 
 document.getElementById("login-button").addEventListener("click", async () => {
-    console.log("button pressed")
-    const username = document.getElementById("username-box").value 
-    const password = document.getElementById("password-box").value
-    
+const username = document.getElementById("username-box").value 
+const password = document.getElementById("password-box").value
+
+    if (!username) return UserMessage("Please provide a valid username")
+    if (!password) return UserMessage("Please provide a valid password")
+
     const response = await fetch("http://localhost:3001/api/users/login", {
         method: "post",
         mode: "cors",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({username, password})
     })
+
     token = await response.json()
-    if (token.error) console.log("error")
+    if (token.error) return UserMessage(token.error)
     localStorage.setItem("user_auth_token", token["user_auth_token"]);
-    chrome.browserAction.setPopup({popup: "popup.html"}, () => {console.log("done")})
+    
+    chrome.browserAction.setPopup({popup: "popup.html"}, () => {
+     document.getElementById("username-box").value = ""
+     document.getElementById("password-box").value = ""
+     UserMessage("You are logged in, close this popup to add messages")
+    })
 })
+
+
+
+function UserMessage(message) {
+    document.getElementById("user-message").innerText = message
+}
 
