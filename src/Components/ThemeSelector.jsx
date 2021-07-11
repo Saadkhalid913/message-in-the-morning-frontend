@@ -1,26 +1,21 @@
 import React, { Component } from 'react'
 
 export default class Themeselector extends Component {
-    state = {CurrentTheme : this.props.colors[0]}
     render() {
         const { colors } = this.props;
+        if (!this.props.CurrentTheme) return null
         return (
             <div className ="theme-selector">
                 {colors.map(c => <div 
                                     key={c["name"]}
-                                    onClick = {() => {this.changeTheme(c)}}
+                                    onClick = {() => {this.props.changeTheme(c)}}
                                     style={{backgroundColor: c["--message-background"]}}
-                                    className = {(c["name"] === this.state.CurrentTheme["name"]) ? "color-option-selected" : "color-option"}>
+                                    className = {(c["name"] === this.props.CurrentTheme["name"]) ? "color-option-selected" : "color-option"}>
                                     </div>)}
             </div>
         )
     }
     
-    changeTheme(c) {
-        for (let key in c)
-            document.documentElement.style.setProperty(key, c[key])
-        this.setState({CurrentTheme : c})
-    }
 
 }
 
