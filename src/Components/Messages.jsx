@@ -20,7 +20,7 @@ export default class Messages extends Component {
     }
     render() {
         if (this.state.messages.length === 0) {
-            return (<h1>No messages for today!</h1>)
+            return (<h1 className = "main-user-message">No messages for today!</h1>)
         }
 
         return (
@@ -51,14 +51,11 @@ export default class Messages extends Component {
 
     initTheme = () => {
         if (localStorage.getItem("CurrentTheme") != null) {
-            console.log(1)
             this.setState({current_theme: JSON.parse(localStorage.getItem("CurrentTheme"))})
         }
         else {
-            console.log(2)
             this.setState({current_theme: themes[0]})
         }
-        console.log("Setting theme to: ", this.state.current_theme)
 
     }
 

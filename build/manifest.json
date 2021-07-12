@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "message",
+  "version": "1.0.0",
+  "author": "saad",
+  "description": "test",
+  
+  "browser_action": {
+      "default_popup": "login.html"
+  },
+
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  }
+}
