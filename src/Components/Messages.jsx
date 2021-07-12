@@ -29,7 +29,6 @@ export default class Messages extends Component {
                             CurrentTheme = {this.state.current_theme}
                             changeTheme={this.changeTheme}/>
             <div className="messages-wrapper">
-                <h3>You have {this.state.messages.length} Messages</h3>
                 {this.state.messages.map(m => <Message key={m.title + Date.now()} message={m}/>)}
             </div>
             </div>
@@ -38,7 +37,7 @@ export default class Messages extends Component {
     
     getMessages = async () => {
         const { token } = this.props
-        const response = await axios.get("http://localhost:3001/api/messages", {headers: {user_auth_token: token}})
+        const response = await axios.get("http://localhost:3001/api/messages/recent", {headers: {user_auth_token: token}})
         if (response.data.error) return console.log(response.data.error)
         this.setState({messages : response.data})
     }
