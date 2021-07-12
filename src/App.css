@@ -78,11 +78,11 @@ body {
   top: 50%;
   transform: translate(0%, -50%);
   height:60vh;
-  width: 4.5%;
+  width: 4.75%;
   justify-content: stretch;
-  padding-right: 0.5%;
+  padding-right: 0.75%;
   left: -4%;
-  background-color: white;
+  background-color: var(--text-color);
   border-radius: 4px;
 
 }
