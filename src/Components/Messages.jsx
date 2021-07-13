@@ -37,7 +37,7 @@ export default class Messages extends Component {
     
     getMessages = async () => {
         const { token } = this.props
-        const response = await axios.get("http://localhost:3001/api/messages/recent", {headers: {user_auth_token: token}})
+        const response = await axios.get("https://mitm-api.herokuapp.com/api/messages/recent", {headers: {user_auth_token: token}})
         if (response.data.error) return console.log(response.data.error)
         this.setState({messages : response.data})
     }
@@ -62,13 +62,13 @@ export default class Messages extends Component {
     handleDelete = async (message) => {
         const id = message._id
         const { token } = this.props
-        const response = await axios.post("http://localhost:3001/api/messages/delete/" + id, {}, {headers: {user_auth_token: token}});
+        const response = await axios.post("https://mitm-api.herokuapp.com/api/messages/delete/" + id, {}, {headers: {user_auth_token: token}});
         const { data } = response 
 
         if (data.error) return console.log(data.error)
 
         const oldMessages = [...this.state.messages]
-        const index = oldMessages.indexOf(data._id)
+        const index = oldMessages.findIndex(m => m._id === data._id)
         oldMessages.splice(index,1)
         this.setState({messages : oldMessages})
     }

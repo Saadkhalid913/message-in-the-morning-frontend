@@ -20,8 +20,6 @@ function getTimeRemainingString(message) {
     const millisecondsInMinute = 1000 * 60
     const millisecondsInHour = 1000 * 60 * 60 
     const MillisecondsInDay = millisecondsInHour * 24
-    console.log(timeCreated)
-    console.log(Date.now())
     
     const elapsedMilliseconds = Date.now() - timeCreated
     const elapsedMinutes = Math.floor( elapsedMilliseconds / millisecondsInMinute)

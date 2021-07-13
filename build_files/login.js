@@ -1,5 +1,5 @@
 if (localStorage.getItem("user_auth_token")) {
-    fetch("http://localhost:3001/api/users/verify", {
+    fetch("https://mitm-api.herokuapp.com/api/users/verify", {
         method: "post",
         mode: "cors",
         headers: {"Content-Type": "application/json"},
@@ -22,7 +22,7 @@ const password = document.getElementById("password-box").value
     if (!username) return UserMessage("Please provide a valid username")
     if (!password) return UserMessage("Please provide a valid password")
 
-    const response = await fetch("http://localhost:3001/api/users/login", {
+    const response = await fetch("https://mitm-api.herokuapp.com/api/users/login", {
         method: "post",
         mode: "cors",
         headers: {"Content-Type": "application/json"},

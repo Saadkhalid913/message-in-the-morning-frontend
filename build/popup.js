@@ -1,6 +1,6 @@
 
 if (localStorage.getItem("user_auth_token")) {
-    fetch("http://localhost:3001/api/users/verify", {
+    fetch("https://mitm-api.herokuapp.com/api/users/verify", {
         method: "post",
         mode: "cors",
         headers: {"Content-Type": "application/json"},
@@ -23,7 +23,7 @@ document.getElementById("submit-message").addEventListener("click", async () => 
     const title = document.getElementById("title-box").value
     const body = document.getElementById("body-box").value
 
-    const response = await fetch("http://localhost:3001/api/messages", {    
+    const response = await fetch("https://mitm-api.herokuapp.com/api/messages", {    
         method: "post",
         mode:"cors",
         headers: {"Content-Type": "application/json"},

@@ -11,5 +11,8 @@
 
   "chrome_url_overrides": {
     "newtab": "index.html"
+  },
+  "icons": {
+    "192": "logo192.png" 
   }
 }
