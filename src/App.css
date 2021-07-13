@@ -8,8 +8,8 @@
 :root {
   --message-background: black;
   --background: black;
-  --text-color: black;
-  --shadow-color: black;
+  --text-color: #FFFFFF;
+  --shadow-color: rgb(7, 2, 2);
 }
 
 body {

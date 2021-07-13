@@ -12,6 +12,11 @@ if (localStorage.getItem("user_auth_token")) {
     }
 })
 }
+else {
+    chrome.browserAction.setPopup({popup: "login.html"}, () => {console.log("done")})
+    document.body.innerHTML = `<h2 class = "logged-in">You are not logged in, close this popup log in</h2>`
+
+}
 
 
 document.getElementById("submit-message").addEventListener("click", async () => {

@@ -6,7 +6,6 @@ if (localStorage.getItem("user_auth_token")) {
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({user_auth_token: localStorage.getItem("user_auth_token")})
     }).then(r => r.json()).then(r => {
-        console.log(r)
         if (r.error) {
             chrome.browserAction.setPopup({popup: "login.html"}, () => {console.log("done")})
             document.body.innerHTML = `<h2 class = "logged-in">You are not logged in, close this popup log in</h2>`
@@ -16,6 +15,7 @@ if (localStorage.getItem("user_auth_token")) {
 else {
     chrome.browserAction.setPopup({popup: "login.html"}, () => {console.log("done")})
     document.body.innerHTML = `<h2 class = "logged-in">You are not logged in, close this popup log in</h2>`
+
 }
 
 
