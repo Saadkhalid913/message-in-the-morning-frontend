@@ -9,18 +9,20 @@ const Message = (props) => {
             <h2>{message.title}</h2>
             <p className = "message-body">{message.body}</p>
             <p className = "message-time-remaining">{getTimeRemainingString(message)}</p>
+            <button className ="message-delete" onClick={() =>{props.handleDelete(message)}}>Delete</button>
         </div>
     );
 }
 
 
 function getTimeRemainingString(message) {
-
     const timeCreated = new Date(message.timeCreated).valueOf();
     const millisecondsInMinute = 1000 * 60
     const millisecondsInHour = 1000 * 60 * 60 
     const MillisecondsInDay = millisecondsInHour * 24
-
+    console.log(timeCreated)
+    console.log(Date.now())
+    
     const elapsedMilliseconds = Date.now() - timeCreated
     const elapsedMinutes = Math.floor( elapsedMilliseconds / millisecondsInMinute)
 
