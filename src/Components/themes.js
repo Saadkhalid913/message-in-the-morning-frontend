@@ -14,13 +14,13 @@ const themes = [
      
      {"--message-background": "#F08000",
      "--background": "#ED8A18",
-     "--text-color": "#030303",
+     "--text-color": "#FFFFFF",
      "--shadow-color": "#000000",
       "name": "theme3"},
 
      {"--message-background": "#F2C00A",
      "--background": "#FCC80D",
-     "--text-color": "#030303",
+     "--text-color": "#111111",
      "--shadow-color": "#000000",
       "name": "theme4"},
 
