@@ -16,32 +16,32 @@ const themes = [
      "--background": "#ED8A18",
      "--text-color": "#030303",
      "--shadow-color": "#000000",
-      "name": "theme12"},
+      "name": "theme3"},
 
      {"--message-background": "#F2C00A",
      "--background": "#FCC80D",
      "--text-color": "#030303",
      "--shadow-color": "#000000",
-      "name": "theme12"},
+      "name": "theme4"},
 
      {"--message-background": "#1E60E6",
      "--background": "#3577FC",
      "--text-color": "#FFFFFF",
      "--shadow-color": "#0e0e0e",
-      "name": "theme3"},
+      "name": "theme5"},
      
     {"--message-background": "#3E0EC2",
     "--background": "#4E17E6",
     "--text-color": "#FFFFFF",
     "--shadow-color": "#0e0e0e",
-     "name": "theme4"},
+     "name": "theme6"},
 
 
     {"--message-background": "#1f1f1f",
     "--background": "#2D2D2D",
     "--text-color": "#E0E0E0",
     "--shadow-color": "#000000",
-     "name": "theme5"}
+     "name": "theme7"}
 
 
 ]
