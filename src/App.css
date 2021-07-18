@@ -94,13 +94,13 @@ body {
 }
 
 .message h2 {
-  font-size: 4rem;
+  font-size: 3rem;
   text-transform: capitalize;
 
 }
 
 .message p {
-  font-size: 2rem;
+  font-size: 2em;
 }
 
 
