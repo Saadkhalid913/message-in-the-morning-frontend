@@ -45,4 +45,3 @@ const password = document.getElementById("password-box").value
 function UserMessage(message) {
     document.getElementById("user-message").innerText = message
 }
-
