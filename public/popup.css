@@ -4,9 +4,9 @@
   }
 
   :root {
-    --message-background: black;
-    --background: black;
-    --text-color: #FFFFFF;
+    --message-background: white;
+    --background: white;
+    --text-color: black;
     --shadow-color: rgb(7, 2, 2);
   }
 
