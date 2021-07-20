@@ -1,7 +1,13 @@
 * {
     outline: none;
     border: none;
-    
+  }
+
+  :root {
+    --message-background: black;
+    --background: black;
+    --text-color: #FFFFFF;
+    --shadow-color: rgb(7, 2, 2);
   }
 
 .popup-body {
