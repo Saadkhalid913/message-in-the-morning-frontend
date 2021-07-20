@@ -1,3 +1,4 @@
+updateTheme()
 
 if (localStorage.getItem("user_auth_token")) {
     fetch("https://mitm-api.herokuapp.com/api/users/verify", {
@@ -46,4 +47,15 @@ document.getElementById("submit-message").addEventListener("click", async () => 
 
 function UserMessage(message) {
     document.getElementById("user-message").innerText = message
+}
+
+
+function updateTheme() {
+    const theme = localStorage.getItem("CurrentTheme")
+    if (!theme) return 
+    newTheme = JSON.parse(theme)
+    console.log(newTheme)
+    for (let attr in newTheme) {
+        document.documentElement.style.setProperty(attr, newTheme[attr])
+    }
 }
